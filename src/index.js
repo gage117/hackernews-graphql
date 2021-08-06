@@ -3,14 +3,16 @@ const { ApolloServer } = require('apollo-server');
 // 1
 const typeDefs = `
   type Query {
-    info: String!
+    info: String!,
+    ranNum: Int!
   }
 `
 
 // 2
 const resolvers = {
   Query: {
-    info: () => `This is the API of a Hackernews Clone`
+    info: () => `This is the API of a Hackernews Clone`,
+    ranNum: () => Math.floor(Math.random() * 100)
   }
 }
 
